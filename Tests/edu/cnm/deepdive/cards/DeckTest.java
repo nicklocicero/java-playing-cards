@@ -13,7 +13,6 @@ class DeckTest {
   private Card[] unshuffledCards;
   private Card[] shuffledCards;
 
-
   @Test
   void deal() {
 
@@ -33,7 +32,6 @@ class DeckTest {
       }
     });
     deck.shuffle(rng);
-    deck = new Deck();
     rng = new SecureRandom();
     assertDoesNotThrow(new Executable() {
       @Override

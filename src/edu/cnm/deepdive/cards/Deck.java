@@ -2,6 +2,7 @@ package edu.cnm.deepdive.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -14,6 +15,7 @@ public class Deck {
   public Deck() {
     // using values().length safeguards against enums changing
     cards = new ArrayList<>(Rank.values().length * Suit.values().length);
+    dealt = new LinkedList<>();
     for (Suit suit : Suit.values()) {
       for (Rank rank : Rank.values()) {
         Card card = new Card(rank, suit);
@@ -22,8 +24,6 @@ public class Deck {
     }
     shuffled = false;
   }
-
-  // TODO shuffle, deal, and sort
 
   public void shuffle(Random rng) {
     cards.addAll(dealt);
