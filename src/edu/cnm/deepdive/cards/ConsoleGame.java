@@ -39,6 +39,12 @@ public class ConsoleGame {
           }
           System.out.println("Your play: ");
           player.play();
+          if (player.isBusted()) {
+            System.out.printf("You busted and lost %d%n", bet);
+            pot -= bet;
+            bet = -1;
+            continue;
+          }
           dealer.play();
           System.out.printf("Dealer's hand: %s%n", dealer);
           int comparison = player.compareTo(dealer);
