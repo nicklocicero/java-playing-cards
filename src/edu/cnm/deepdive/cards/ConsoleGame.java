@@ -53,7 +53,11 @@ public class ConsoleGame {
             pot -= bet;
           } else if (comparison > 0) {
             System.out.printf("You won $%d%n", bet);
-            pot += bet;
+            if (player.isBlackjack()) {
+              pot += bet * 1.5;
+            } else {
+              pot += bet;
+            }
           } else {
             System.out.println("Push");
           }
